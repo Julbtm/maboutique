@@ -1,0 +1,9 @@
+{% extends 'boutique/base.html' %}
+
+{% block content %}
+<div class="text-center py-5">
+    <h1 class="display-5 fw-bold">Bienvenue sur Ma Boutique</h1>
+    <p class="lead text-muted mt-3">Découvrez nos produits et contactez-nous directement sur WhatsApp.</p>
+    <a href="{% url 'liste_produit' %}" class="btn btn-success btn-lg mt-3">Voir nos produits</a>
+</div>
+{% endblock %}

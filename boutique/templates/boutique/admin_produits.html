@@ -1,0 +1,52 @@
+{% extends 'boutique/base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Gestion des produits</h1>
+    <div>
+        <a href="{% url 'ajouter_produit' %}" class="btn btn-success">+ Ajouter un produit</a>
+        <a href="{% url 'modifier_configuration' %}" class="btn btn-outline-primary">Numéro WhatsApp</a>
+        <a href="{% url 'deconnexion' %}" class="btn btn-outline-secondary">Déconnexion</a>
+    </div>
+</div>
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-success">{{ message }}</div>
+{% endfor %}
+{% endif %}
+
+<table class="table table-bordered bg-white align-middle">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Disponible</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for produit in produits %}
+        <tr>
+            <td>
+                {% if produit.image %}
+                <img src="{{ produit.image.url }}" style="width: 60px; height: 60px; object-fit: cover;">
+                {% endif %}
+            </td>
+            <td>{{ produit.nom }}</td>
+            <td>{{ produit.prix }} FCFA</td>
+            <td>{% if produit.disponible %}Oui{% else %}Non{% endif %}</td>
+            <td>
+                <a href="{% url 'modifier_produit' produit.id %}" class="btn btn-sm btn-primary">Modifier</a>
+                <a href="{% url 'supprimer_produit' produit.id %}" class="btn btn-sm btn-danger">Supprimer</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5" class="text-center text-muted">Aucun produit pour le moment.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

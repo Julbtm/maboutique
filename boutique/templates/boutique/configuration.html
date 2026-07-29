@@ -1,0 +1,25 @@
+{% extends 'boutique/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h1 class="mb-4">Numéro WhatsApp</h1>
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label">Numéro WhatsApp (avec indicatif pays, sans + ni espace)</label>
+                {{ form.numero_whatsapp }}
+            </div>
+            <button type="submit" class="btn btn-success">Enregistrer</button>
+            <a href="{% url 'admin_produits' %}" class="btn btn-outline-secondary">Annuler</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'boutique/base.html' %}
+
+{% block content %}
+<h1 class="mb-4 text-center">Contact</h1>
+<div class="text-center">
+    <p class="text-muted">Une question ? Contactez-nous directement sur WhatsApp.</p>
+    <a href="https://wa.me/{{ whatsapp_number }}" target="_blank" class="btn btn-success btn-lg">
+        Discuter sur WhatsApp
+    </a>
+</div>
+{% endblock %}

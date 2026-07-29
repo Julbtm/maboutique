@@ -1,0 +1,23 @@
+{% extends 'boutique/base.html' %}
+
+{% block content %}
+<h1 class="mb-4">À propos de nous</h1>
+
+<p class="text-muted">
+    Bienvenue sur notre boutique en ligne ! Nous mettons à votre disposition une sélection
+    de produits soigneusement choisis pour répondre à vos besoins au quotidien.
+</p>
+
+<p class="text-muted">
+    Notre objectif est simple : vous offrir des produits de qualité à des prix justes,
+    avec un service client rapide et disponible. Chaque produit présenté ici est vérifié
+    avant publication pour vous garantir une expérience d'achat fiable.
+</p>
+
+<p class="text-muted">
+    Vous avez une question sur un produit, sa disponibilité ou son prix ? N'hésitez pas à
+    nous contacter directement sur WhatsApp — nous répondons rapidement et avec plaisir.
+</p>
+
+<a href="{% url 'contact' %}" class="btn btn-outline-success mt-3">Nous contacter</a>
+{% endblock %}

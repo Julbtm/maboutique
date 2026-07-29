@@ -1,0 +1,45 @@
+{% extends 'boutique/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <h1 class="mb-4">{{ titre }}</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label">Nom</label>
+                {{ form.nom }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Description</label>
+                {{ form.description }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Prix (FCFA)</label>
+                {{ form.prix }}
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Image</label>
+                {{ form.image }}
+                {% if form.instance.image %}
+                <img src="{{ form.instance.image.url }}" class="mt-2"
+                    style="width: 100px; height: 100px; object-fit: cover;">
+                {% endif %}
+            </div>
+
+            <div class="form-check mb-3">
+                {{ form.disponible }}
+                <label class="form-check-label">Disponible</label>
+            </div>
+
+            <button type="submit" class="btn btn-success">Enregistrer</button>
+            <a href="{% url 'admin_produits' %}" class="btn btn-outline-secondary">Annuler</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
