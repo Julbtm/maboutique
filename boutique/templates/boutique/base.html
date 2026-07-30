@@ -19,25 +19,25 @@
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'accueil' %}">Accueil</a>
+                        <a class="nav-link py-2" href="{% url 'accueil' %}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'liste_produit' %}">Produits</a>
+                        <a class="nav-link py-2" href="{% url 'liste_produit' %}">Produits</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'apropos' %}">À propos</a>
+                        <a class="nav-link py-2" href="{% url 'apropos' %}">À propos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        <a class="nav-link py-2" href="{% url 'contact' %}">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container py-5">
+    <div class="container py-4 py-md-5 px-3">
         {% block content %}
-        
+
         {% endblock %}
     </div>
 
